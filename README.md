@@ -227,6 +227,10 @@ These test cover a range of behavior, including:
 
 [interface-tests]: https://github.com/ruby-i18n/i18n/blob/v1.8.2/lib/i18n/tests/basics.rb
 
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md).
+
 ## License
 
 The gem is available as open source under the terms of the [MIT
