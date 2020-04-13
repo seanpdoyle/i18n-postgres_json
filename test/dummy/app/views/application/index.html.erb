@@ -1,0 +1,15 @@
+<h1 data-i18n-key="application.index.title">
+  <%= translate("application.index.title") %>
+</h1>
+
+<p data-i18n-key="application.index.not_declared_in_postgres">
+  <%= translate("application.index.not_declared_in_postgres") %>
+</p>
+
+<ul data-i18n-key="application.index.array">
+  <% translate("application.index.array", default: [[]]).each_with_index do |translation, index| %>
+    <li data-i18n-key="application.index.array[<%= index %>]">
+      <%= translation %>
+    </li>
+  <% end %>
+</ul>

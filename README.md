@@ -209,6 +209,24 @@ example omits those details for the sake of brevity.
 
 [store_translations]: https://www.rubydoc.info/github/ruby-i18n/i18n/I18n/Backend/Base#store_translations-instance_method
 
+## Testing
+
+In addition to being exercised by a test harness specific to this gem, each
+backend is covered by the [`i18n-ruby`-provided API Tests][interface-tests].
+
+These test cover a range of behavior, including:
+
+* [The Basics of translating text](https://github.com/ruby-i18n/i18n/blob/v1.8.2/lib/i18n/tests/basics.rb)
+* [Translation lookup](https://github.com/ruby-i18n/i18n/blob/v1.8.2/lib/i18n/tests/lookup.rb)
+* [Falling back to provided defaults](https://github.com/ruby-i18n/i18n/blob/v1.8.2/lib/i18n/tests/defaults.rb)
+* [Interpolation](https://github.com/ruby-i18n/i18n/blob/v1.8.2/lib/i18n/tests/interpolation.rb)
+* [Translation key linking](https://github.com/ruby-i18n/i18n/blob/v1.8.2/lib/i18n/tests/link.rb)
+* [Localizing Dates and Times](https://github.com/ruby-i18n/i18n/blob/v1.8.2/lib/i18n/tests/localization.rb)
+* [Pluralizing text](https://github.com/ruby-i18n/i18n/blob/v1.8.2/lib/i18n/tests/pluralization.rb)
+* [Storing Ruby Procs](https://github.com/ruby-i18n/i18n/blob/v1.8.2/lib/i18n/tests/procs.rb)
+
+[interface-tests]: https://github.com/ruby-i18n/i18n/blob/v1.8.2/lib/i18n/tests/basics.rb
+
 ## License
 
 The gem is available as open source under the terms of the [MIT
