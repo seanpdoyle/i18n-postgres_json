@@ -60,9 +60,7 @@ jobs:
         PGUSER: "postgres"
         RAILS_ENV: "test"
       run: |
-        bundle install --jobs 4 --retry 3
-
-        bin/rails app:db:setup
+        bin/setup
 
     - name: "Run Tests"
       env:
