@@ -80,10 +80,14 @@ block, or an initializer of its own):
 
 ```ruby
 # config/initializers/i18n.rb
-I18n.backend = I18n::Backend::Chain.new(
-  I18n::Backend::KeyValue.new(I18n::PostgresJson::KeyValue::Store.new),
-  I18n.backend, # typically defaults to I18n::Backend::Simple
-)
+ActiveSupport.on_load(:i18n) do
+  require "i18n/postgres_json/key_value/store"
+
+  I18n.backend = I18n::Backend::Chain.new(
+    I18n::Backend::KeyValue.new(I18n::PostgresJson::KeyValue::Store.new),
+    I18n.backend, # typically defaults to I18n::Backend::Simple
+  )
+end
 ```
 
 **Caveat:** It's worth noting that according to the [`I18n::Backend::KeyValue`
@@ -140,10 +144,14 @@ block, or an initializer of its own):
 
 ```ruby
 # config/initializers/i18n.rb
-I18n.backend = I18n::Backend::Chain.new(
-  I18n::PostgresJson::Backend.new,
-  I18n.backend, # typically defaults to I18n::Backend::Simple
-)
+ActiveSupport.on_load(:i18n) do
+  require "i18n/postgres_json/backend"
+
+  I18n.backend = I18n::Backend::Chain.new(
+    I18n::PostgresJson::Backend.new,
+    I18n.backend, # typically defaults to I18n::Backend::Simple
+  )
+end
 ```
 
 **Caveat**: It's worth noting that the `I18n::PostgresJson::Backend` does not
